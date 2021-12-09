@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { gRoutes } from './configs/routes';
 import { GRoute } from './models/Route';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [];
 
@@ -14,11 +15,13 @@ function createRoute(route: GRoute): object {
       path: route.path,
       component: route.component,
       children: chRoutes,
+      canActivate: route.isNeedLogin ? [ AuthGuard ] : null
     };
   }else{
     return {
       path: route.path,
-      component: route.component
+      component: route.component,
+      canActivate: route.isNeedLogin ? [ AuthGuard ] : null
     };
   }
 }
