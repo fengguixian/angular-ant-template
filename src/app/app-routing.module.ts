@@ -27,7 +27,7 @@ function createRoute(route: GRoute): object {
 }
 
 function initRoutes() {
-  gRoutes.map(item => {
+  gRoutes.forEach(item => {
     routes.push(createRoute(item));
   });
 }

@@ -1,1 +1,22 @@
-<p>login works!</p>
+<div class="login-root">
+    <div class="login-box">
+        <div class='login-box_title'>Welcome</div>
+        <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Please input your username!">
+                    <nz-input-group nzPrefixIcon="user" class="form-item">
+                        <input formControlName="userName" nz-input placeholder="Please input account" />
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Please input your Password!">
+                    <nz-input-group nzPrefixIcon="lock" class="form-item">
+                        <input formControlName="password" nz-input placeholder="Please input password" type="password" />
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+            <button class="login-box_btn" nz-button nzType="primary">Login</button>
+        </form>
+    </div>
+</div>
