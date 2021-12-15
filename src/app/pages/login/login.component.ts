@@ -14,8 +14,12 @@ export class LoginComponent implements OnInit {
 
   submitForm(): void {
     if (this.validateForm.valid) {
-      this.authService.isLoggedIn = true;
-      this.router.navigateByUrl('');
+      let observable = this.authService.login();
+      observable.subscribe({
+        next: () => {
+          this.router.navigateByUrl('');
+        }
+      })
     } else {
       Object.values(this.validateForm.controls).forEach(control => {
         if (control.invalid) {
