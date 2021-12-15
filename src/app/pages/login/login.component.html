@@ -10,10 +10,14 @@
                 </nz-form-control>
             </nz-form-item>
             <nz-form-item>
-                <nz-form-control nzErrorTip="Please input your Password!">
+                <nz-form-control nzErrorTip="Please input your Password!" nzHasFeedback [nzErrorTip]="passwordErrorTpl">
                     <nz-input-group nzPrefixIcon="lock" class="form-item">
-                        <input formControlName="password" nz-input placeholder="Please input password" type="password" />
+                        <input formControlName="passwordLenth" nz-input placeholder="Please input password" type="password" />
                     </nz-input-group>
+                    <ng-template #passwordErrorTpl let-control>
+                        <ng-container *ngIf="control.hasError('required')">Please input your password!</ng-container>
+                        <ng-container *ngIf="control.hasError('passwordLenth')">Password need 6 bits at least!</ng-container>
+                    </ng-template>
                 </nz-form-control>
             </nz-form-item>
             <button class="login-box_btn" nz-button nzType="primary">Login</button>

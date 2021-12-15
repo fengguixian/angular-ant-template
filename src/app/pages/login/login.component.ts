@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, ValidationErrors, FormGroup, Validators } from '@angular/forms';
+import { Observable, Observer } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -22,12 +23,23 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  confirmValidator = (control: FormControl): { [s: string]: boolean } => {
+    if (!control.value) {
+      return { error: true, required: true };
+    } 
+    else if (control.value.length < 6) {
+      return { passwordLenth: true, error: true };
+    }
+    return {};
+  };
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
       userName: [null, [Validators.required]],
       password: [null, [Validators.required]],
+      passwordLenth: [null, [this.confirmValidator]]
     });
   }
 
