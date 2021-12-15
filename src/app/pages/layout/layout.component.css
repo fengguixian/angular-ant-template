@@ -22,3 +22,7 @@ nz-footer {
 .trigger:hover {
     color: #1890ff;
 }
+
+.menu-title{
+    margin-left: 10px
+}

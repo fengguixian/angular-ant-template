@@ -19,7 +19,8 @@ export const sideMenuRoutes: GRoute[] = [
         meta: {
             title: "Dashbord",
             icon: "dashboard-fill",
-            authIds: []
+            authIds: [],
+            level: 1,
         }
     },
     {
@@ -35,7 +36,8 @@ export const sideMenuRoutes: GRoute[] = [
                 meta: {
                     title: "Admins",
                     icon: "apple-fill",
-                    authIds: []
+                    authIds: [],
+                    level: 2,
                 }
             },
             {
@@ -46,14 +48,16 @@ export const sideMenuRoutes: GRoute[] = [
                 meta: {
                     title: "Others",
                     icon: "android-fill",
-                    authIds: []
+                    authIds: [],
+                    level: 2,
                 }
             },
         ],
         meta: {
             title: "Users",
             icon: "gold-fill",
-            authIds: []
+            authIds: [],
+            level: 1,
         }
     },
     {
@@ -64,7 +68,8 @@ export const sideMenuRoutes: GRoute[] = [
         meta: {
             title: "About",
             icon: "info-circle",
-            authIds: []
+            authIds: [],
+            level: 1,
         }
     },
     {
@@ -75,7 +80,8 @@ export const sideMenuRoutes: GRoute[] = [
         meta: {
             title: "Products",
             icon: "taobao-circle-fill",
-            authIds: []
+            authIds: [],
+            level: 1,
         }
     },
 ];
@@ -89,7 +95,8 @@ export const mainLayoutRoutes: GRoute[] = [
         meta: {
             title: '',
             icon: '',
-            authIds: []
+            authIds: [],
+            level: 1,
         }
     }
 ]
@@ -103,7 +110,8 @@ export const errorRoutes: GRoute[] = [
         meta: {
             title: '',
             icon: '',
-            authIds: []
+            authIds: [],
+            level: 1,
         }
     },
     {
@@ -114,7 +122,8 @@ export const errorRoutes: GRoute[] = [
         meta: {
             title: '',
             icon: '',
-            authIds: []
+            authIds: [],
+            level: 1,
         }
     }
 ]
@@ -128,7 +137,8 @@ export const gRoutes: GRoute[] = [
         meta: {
             title: '',
             icon: '',
-            authIds: []
+            authIds: [],
+            level: 1,
         }
     },
     ...mainLayoutRoutes,

@@ -1,23 +1,27 @@
 <nz-layout class="layout-root">
     <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
         <ul nz-menu nzTheme="dark" nzMode="inline">
+            <!-- 递归生成菜单 -->
             <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: menus }"></ng-container>
             <ng-template #menuTpl let-menus>
                 <ng-container *ngFor="let route of menus">
                   <li
                     *ngIf="!route.children"
                     nz-menu-item
-                    [nzPaddingLeft]="24"
+                    [nzPaddingLeft]="route.meta.level * 24"
+                    nzMatchRouter
                   >
                     <i nz-icon [nzType]="route.meta.icon" *ngIf="route.meta.icon"></i>
-                    <span>{{ route.meta.title }}</span>
+                    <span [routerLink]="route.path">{{ route.meta.title }}</span>
+                    <!-- <a class="menu-title" [routerLink]="route.path">{{ route.meta.title }}</a> -->
                   </li>
                   <li
                     *ngIf="route.children"
                     nz-submenu
-                    [nzPaddingLeft]="24"
+                    [nzPaddingLeft]="route.meta.level * 24"
                     [nzTitle]="route.meta.title"
                     [nzIcon]="route.meta.icon"
+                    nzMatchRouter
                   >
                     <ul>
                       <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: route.children }"></ng-container>
@@ -35,9 +39,10 @@
             [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
             (click)="isCollapsed = !isCollapsed"
           ></i>
+          <span>Welcome To Angular Ant Template</span>
         </nz-header>
         <nz-content>
-
+            <router-outlet></router-outlet>
         </nz-content>
         <nz-footer>Angular Antd Template ©2021 Implement By Gavin</nz-footer>
     </nz-layout>

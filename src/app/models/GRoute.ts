@@ -9,5 +9,6 @@ export interface GRoute {
 export interface Meta {
     title: string;
     icon: string;
-    authIds: Array<string|number> | null
+    authIds: Array<string|number> | null;
+    level: number
 }
