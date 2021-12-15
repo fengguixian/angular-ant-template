@@ -1,8 +1,44 @@
-<nz-layout>
-    <nz-sider>Sider</nz-sider>
+<nz-layout class="layout-root">
+    <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+        <ul nz-menu nzTheme="dark" nzMode="inline">
+            <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: menus }"></ng-container>
+            <ng-template #menuTpl let-menus>
+                <ng-container *ngFor="let route of menus">
+                  <li
+                    *ngIf="!route.children"
+                    nz-menu-item
+                    [nzPaddingLeft]="24"
+                  >
+                    <i nz-icon [nzType]="route.meta.icon" *ngIf="route.meta.icon"></i>
+                    <span>{{ route.meta.title }}</span>
+                  </li>
+                  <li
+                    *ngIf="route.children"
+                    nz-submenu
+                    [nzPaddingLeft]="24"
+                    [nzTitle]="route.meta.title"
+                    [nzIcon]="route.meta.icon"
+                  >
+                    <ul>
+                      <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: route.children }"></ng-container>
+                    </ul>
+                  </li>
+                </ng-container>
+              </ng-template>
+        </ul>
+    </nz-sider>
     <nz-layout>
-        <nz-header>Header</nz-header>
-        <nz-content>Content</nz-content>
-        <nz-footer>Footer</nz-footer>
+        <nz-header>
+            <i
+            class="trigger"
+            nz-icon
+            [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            (click)="isCollapsed = !isCollapsed"
+          ></i>
+        </nz-header>
+        <nz-content>
+
+        </nz-content>
+        <nz-footer>Angular Antd Template ©2021 Implement By Gavin</nz-footer>
     </nz-layout>
 </nz-layout>

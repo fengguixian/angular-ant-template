@@ -2,3 +2,23 @@ nz-header {
     background: #fff;
     padding: 0;
 }
+
+nz-footer {
+    text-align: center;
+}
+
+.layout-root{
+    height: 100%;
+}
+
+.trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.trigger:hover {
+    color: #1890ff;
+}

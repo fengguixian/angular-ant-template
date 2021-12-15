@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { sideMenuRoutes } from 'src/app/configs/routes';
 
 @Component({
   selector: 'app-layout',
@@ -9,7 +10,11 @@ export class LayoutComponent implements OnInit {
 
   constructor() { }
 
+  isCollapsed: boolean = false;
+  menus = sideMenuRoutes;
+
   ngOnInit(): void {
+    console.log('menus: ', this.menus);
   }
 
 }

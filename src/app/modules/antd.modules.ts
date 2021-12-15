@@ -4,6 +4,7 @@ import { NZ_ICONS, NzIconModule } from 'ng-zorro-antd/icon';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
 
 import {
   UserOutline,
@@ -14,7 +15,9 @@ import {
   AppleFill,
   AndroidFill,
   InfoCircleFill,
-  TaobaoCircleFill
+  TaobaoCircleFill,
+  MenuFoldOutline,
+  MenuUnfoldOutline
 } from '@ant-design/icons-angular/icons';
 
 const icons = [
@@ -26,7 +29,9 @@ const icons = [
   AppleFill, 
   AndroidFill, 
   InfoCircleFill,
-  TaobaoCircleFill
+  TaobaoCircleFill,
+  MenuFoldOutline,
+  MenuUnfoldOutline
 ];
 
 @NgModule({
@@ -35,7 +40,8 @@ const icons = [
     NzFormModule,
     NzInputModule,
     NzButtonModule,
-    NzLayoutModule
+    NzLayoutModule,
+    NzMenuModule
   ],
   providers: [
     { provide: NZ_ICONS, useValue: icons }

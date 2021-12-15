@@ -18,7 +18,7 @@ export const sideMenuRoutes: GRoute[] = [
         children: null,
         meta: {
             title: "Dashbord",
-            icon: "dashboard",
+            icon: "dashboard-fill",
             authIds: []
         }
     },
@@ -34,7 +34,7 @@ export const sideMenuRoutes: GRoute[] = [
                 isNeedLogin: true,
                 meta: {
                     title: "Admins",
-                    icon: "apple",
+                    icon: "apple-fill",
                     authIds: []
                 }
             },
@@ -45,14 +45,14 @@ export const sideMenuRoutes: GRoute[] = [
                 isNeedLogin: true,
                 meta: {
                     title: "Others",
-                    icon: "android",
+                    icon: "android-fill",
                     authIds: []
                 }
             },
         ],
         meta: {
             title: "Users",
-            icon: "gold",
+            icon: "gold-fill",
             authIds: []
         }
     },
@@ -74,7 +74,7 @@ export const sideMenuRoutes: GRoute[] = [
         children: null,
         meta: {
             title: "Products",
-            icon: "taobao-circle",
+            icon: "taobao-circle-fill",
             authIds: []
         }
     },
@@ -86,7 +86,11 @@ export const mainLayoutRoutes: GRoute[] = [
         component: LayoutComponent,
         isNeedLogin: true,
         children: sideMenuRoutes,
-        meta: {}
+        meta: {
+            title: '',
+            icon: '',
+            authIds: []
+        }
     }
 ]
 
@@ -96,14 +100,22 @@ export const errorRoutes: GRoute[] = [
         component: Page403Component,
         isNeedLogin: false,
         children: null,
-        meta: {}
+        meta: {
+            title: '',
+            icon: '',
+            authIds: []
+        }
     },
     {
         path: '404',
         component: Page404Component,
         isNeedLogin: false,
         children: null,
-        meta: {}
+        meta: {
+            title: '',
+            icon: '',
+            authIds: []
+        }
     }
 ]
 
@@ -113,7 +125,11 @@ export const gRoutes: GRoute[] = [
         component: LoginComponent,
         isNeedLogin: false,
         children: null,
-        meta: {}
+        meta: {
+            title: '',
+            icon: '',
+            authIds: []
+        }
     },
     ...mainLayoutRoutes,
     ...errorRoutes
