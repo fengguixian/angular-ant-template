@@ -6,6 +6,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 
 import {
     UserOutline,
+    LockFill,
     LockOutline,
     DashboardFill,
     GoldFill,
@@ -17,6 +18,7 @@ import {
 
   const icons = [
     UserOutline, 
+    LockFill,
     LockOutline, 
     DashboardFill, 
     GoldFill, 

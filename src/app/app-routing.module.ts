@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { gRoutes } from './configs/routes';
-import { GRoute } from './models/Route';
+import { GRoute } from './models/GRoute';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [];

@@ -12,7 +12,7 @@
             <nz-form-item>
                 <nz-form-control nzErrorTip="Please input your Password!" nzHasFeedback [nzErrorTip]="passwordErrorTpl">
                     <nz-input-group nzPrefixIcon="lock" class="form-item">
-                        <input formControlName="passwordLenth" nz-input placeholder="Please input password" type="password" />
+                        <input formControlName="password" nz-input placeholder="Please input password" type="password" />
                     </nz-input-group>
                     <ng-template #passwordErrorTpl let-control>
                         <ng-container *ngIf="control.hasError('required')">Please input your password!</ng-container>
