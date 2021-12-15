@@ -7,6 +7,7 @@ import { UsersComponent } from "../pages/users/users.component";
 import { AdminsComponent } from "../pages/users/admins/admins.component";
 import { OthersComponent } from "../pages/users/others/others.component";
 import { AboutComponent } from "../pages/about/about.component";
+import { ProductsComponent } from "../pages/products/products.component";
 
 export const sideMenuRoutes: GRoute[] = [
     {
@@ -37,6 +38,12 @@ export const sideMenuRoutes: GRoute[] = [
     {
         path: 'about',
         component: AboutComponent,
+        isNeedLogin: true,
+        children: null,
+    },
+    {
+        path: 'products',
+        component: ProductsComponent,
         isNeedLogin: true,
         children: null,
     },
