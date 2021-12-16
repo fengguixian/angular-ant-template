@@ -1,6 +1,6 @@
 <nz-layout class="layout-root">
     <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
-        <ul nz-menu nzTheme="dark" nzMode="inline">
+        <ul nz-menu nzTheme="dark" nzMode="inline" (nzClick)='onMenuClick'>
             <!-- 递归生成菜单 -->
             <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: menus }"></ng-container>
             <ng-template #menuTpl let-menus>
@@ -12,7 +12,7 @@
                     nzMatchRouter
                   >
                     <i nz-icon [nzType]="route.meta.icon" *ngIf="route.meta.icon"></i>
-                    <span [routerLink]="route.path">{{ route.meta.title }}</span>
+                    <span [routerLink]="route.routeLink">{{ route.meta.title }}</span>
                     <!-- <a class="menu-title" [routerLink]="route.path">{{ route.meta.title }}</a> -->
                   </li>
                   <li

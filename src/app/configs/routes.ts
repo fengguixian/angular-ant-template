@@ -13,6 +13,7 @@ import { ProductsComponent } from "../pages/products/products.component";
 export const sideMenuRoutes: GRoute[] = [
     {
         path: 'dashbord',
+        routeLink: 'dashbord',
         component: DashbordComponent,
         isNeedLogin: true,
         children: null,
@@ -25,11 +26,13 @@ export const sideMenuRoutes: GRoute[] = [
     },
     {
         path: 'users',
+        routeLink: 'users',
         component: UsersComponent,
         isNeedLogin: true,
         children: [
             {
                 path: 'admins',
+                routeLink: 'users/admins',
                 component: AdminsComponent,
                 children: null,
                 isNeedLogin: true,
@@ -42,6 +45,7 @@ export const sideMenuRoutes: GRoute[] = [
             },
             {
                 path: 'others',
+                routeLink: 'users/others',
                 component: OthersComponent,
                 children: null,
                 isNeedLogin: true,
@@ -62,6 +66,7 @@ export const sideMenuRoutes: GRoute[] = [
     },
     {
         path: 'about',
+        routeLink: 'about',
         component: AboutComponent,
         isNeedLogin: true,
         children: null,
@@ -74,6 +79,7 @@ export const sideMenuRoutes: GRoute[] = [
     },
     {
         path: 'products',
+        routeLink: 'products',
         component: ProductsComponent,
         isNeedLogin: true,
         children: null,
@@ -89,6 +95,7 @@ export const sideMenuRoutes: GRoute[] = [
 export const mainLayoutRoutes: GRoute[] = [
     {
         path: '', 
+        routeLink: '',
         component: LayoutComponent,
         isNeedLogin: true,
         children: sideMenuRoutes,
@@ -104,6 +111,7 @@ export const mainLayoutRoutes: GRoute[] = [
 export const errorRoutes: GRoute[] = [
     {
         path: '403',
+        routeLink: '403',
         component: Page403Component,
         isNeedLogin: false,
         children: null,
@@ -116,6 +124,7 @@ export const errorRoutes: GRoute[] = [
     },
     {
         path: '404',
+        routeLink: '404',
         component: Page404Component,
         isNeedLogin: false,
         children: null,
@@ -131,6 +140,7 @@ export const errorRoutes: GRoute[] = [
 export const gRoutes: GRoute[] = [
     {
         path: 'login', 
+        routeLink: 'login',
         component: LoginComponent,
         isNeedLogin: false,
         children: null,

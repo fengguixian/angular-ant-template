@@ -1,5 +1,6 @@
 export interface GRoute {
-    path: string;
+    path: string | Array<string>;
+    routeLink: string;
     component: any;
     children: Array<GRoute> | null;
     isNeedLogin: boolean,

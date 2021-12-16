@@ -14,7 +14,9 @@ export class LayoutComponent implements OnInit {
   menus = sideMenuRoutes;
 
   ngOnInit(): void {
-    console.log('menus: ', this.menus);
   }
 
+  onMenuClick(e: Event): void {
+    console.log(e);
+  }
 }
