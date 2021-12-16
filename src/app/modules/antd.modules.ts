@@ -5,6 +5,8 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
 
 import {
   UserOutline,
@@ -41,7 +43,9 @@ const icons = [
     NzInputModule,
     NzButtonModule,
     NzLayoutModule,
-    NzMenuModule
+    NzMenuModule,
+    NzAvatarModule,
+    NzPopoverModule
   ],
   providers: [
     { provide: NZ_ICONS, useValue: icons }

@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
       let observable = this.authService.login();
       observable.subscribe({
         next: () => {
-          this.router.navigateByUrl('');
+          this.router.navigateByUrl('dashbord');
         }
       })
     } else {

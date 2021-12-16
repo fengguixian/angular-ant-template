@@ -33,13 +33,21 @@
     </nz-sider>
     <nz-layout>
         <nz-header>
-            <i
-            class="trigger"
-            nz-icon
-            [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-            (click)="isCollapsed = !isCollapsed"
-          ></i>
-          <span>Welcome To Angular Ant Template</span>
+          <div>
+              <i
+              class="trigger"
+              nz-icon
+              [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+              (click)="isCollapsed = !isCollapsed"
+            ></i>
+            <span class="welcome-title">Welcome To Angular Ant Template</span>
+          </div>
+          <ng-template #contentTemplate>
+            <div>
+              <button class="logout-btn" nz-button nzDanger nzType="primary" (click)='logout()'>Logout</button>
+            </div>
+          </ng-template>
+          <nz-avatar class="header-avatar" nz-button nz-popover nzText="G" nzPopoverTitle="Gavin" [nzPopoverContent]="contentTemplate" nzPopoverTrigger="hover" nzPopoverPlacement="bottom"></nz-avatar>
         </nz-header>
         <nz-content>
             <router-outlet></router-outlet>

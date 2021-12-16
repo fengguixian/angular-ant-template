@@ -1,6 +1,10 @@
 nz-header {
     background: #fff;
     padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
 }
 
 nz-footer {
@@ -14,7 +18,7 @@ nz-footer {
 .trigger {
     font-size: 18px;
     line-height: 64px;
-    padding: 0 10px;
+    /* padding: 0 10px; */
     cursor: pointer;
     transition: color 0.3s;
 }
@@ -23,6 +27,14 @@ nz-footer {
     color: #1890ff;
 }
 
-.menu-title{
-    margin-left: 10px
+.welcome-title{
+    margin-left: 10px;
+}
+
+.header-avatar{
+    margin-right: 20px;
+}
+
+.logout-btn{
+    width: 100%;
 }
