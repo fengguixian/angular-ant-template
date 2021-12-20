@@ -63,6 +63,8 @@ function initRoutes() {
 
 initRoutes();
 
+console.log("routes: ", routes);
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

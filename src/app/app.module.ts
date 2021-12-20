@@ -15,6 +15,7 @@ import { AdminsComponent } from './pages/users/admins/admins.component';
 import { OthersComponent } from './pages/users/others/others.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { LayoutComponent } from './pages/layout/layout.component';
+import { DetailComponent } from './pages/users/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LayoutComponent } from './pages/layout/layout.component';
     AdminsComponent,
     OthersComponent,
     ProductsComponent,
-    LayoutComponent
+    LayoutComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

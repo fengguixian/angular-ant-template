@@ -6,7 +6,7 @@
             <ng-template #menuTpl let-menus>
                 <ng-container *ngFor="let route of menus">
                   <li
-                    *ngIf="!route.children"
+                    *ngIf="!route.children && route.isShow"
                     nz-menu-item
                     [nzPaddingLeft]="route.meta.level * 24"
                     nzMatchRouter

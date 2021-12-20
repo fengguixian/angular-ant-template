@@ -4,6 +4,7 @@ export interface GRoute {
     component: any;
     children: Array<GRoute> | null;
     isNeedLogin: boolean,
+    isShow: boolean,
     meta: Meta
 }
 

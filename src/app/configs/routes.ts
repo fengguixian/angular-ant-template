@@ -9,6 +9,7 @@ import { AdminsComponent } from "../pages/users/admins/admins.component";
 import { OthersComponent } from "../pages/users/others/others.component";
 import { AboutComponent } from "../pages/about/about.component";
 import { ProductsComponent } from "../pages/products/products.component";
+import { DetailComponent } from "../pages/users/detail/detail.component";
 
 export const sideMenuRoutes: GRoute[] = [
     {
@@ -16,6 +17,7 @@ export const sideMenuRoutes: GRoute[] = [
         routeLink: 'dashbord',
         component: DashbordComponent,
         isNeedLogin: true,
+        isShow: true,
         children: null,
         meta: {
             title: "Dashbord",
@@ -29,6 +31,7 @@ export const sideMenuRoutes: GRoute[] = [
         routeLink: 'users',
         component: UsersComponent,
         isNeedLogin: true,
+        isShow: true,
         children: [
             {
                 path: 'admins',
@@ -36,6 +39,7 @@ export const sideMenuRoutes: GRoute[] = [
                 component: AdminsComponent,
                 children: null,
                 isNeedLogin: true,
+                isShow: true,
                 meta: {
                     title: "Admins",
                     icon: "apple-fill",
@@ -49,11 +53,26 @@ export const sideMenuRoutes: GRoute[] = [
                 component: OthersComponent,
                 children: null,
                 isNeedLogin: true,
+                isShow: true,
                 meta: {
                     title: "Others",
                     icon: "android-fill",
                     authIds: [],
                     level: 2,
+                }
+            },
+            {
+                path: 'details/:id',
+                routeLink: 'users/detail',
+                component: DetailComponent,
+                children: null,
+                isNeedLogin: true,
+                isShow: false,
+                meta: {
+                    title: "",
+                    icon: "",
+                    authIds: [],
+                    level: 3,
                 }
             },
         ],
@@ -69,6 +88,7 @@ export const sideMenuRoutes: GRoute[] = [
         routeLink: 'about',
         component: AboutComponent,
         isNeedLogin: true,
+        isShow: true,
         children: null,
         meta: {
             title: "About",
@@ -82,6 +102,7 @@ export const sideMenuRoutes: GRoute[] = [
         routeLink: 'products',
         component: ProductsComponent,
         isNeedLogin: true,
+        isShow: true,
         children: null,
         meta: {
             title: "Products",
@@ -98,6 +119,7 @@ export const mainLayoutRoutes: GRoute[] = [
         routeLink: '',
         component: LayoutComponent,
         isNeedLogin: true,
+        isShow: true,
         children: sideMenuRoutes,
         meta: {
             title: '',
@@ -114,6 +136,7 @@ export const errorRoutes: GRoute[] = [
         routeLink: '403',
         component: Page403Component,
         isNeedLogin: false,
+        isShow: true,
         children: null,
         meta: {
             title: '',
@@ -127,6 +150,7 @@ export const errorRoutes: GRoute[] = [
         routeLink: '404',
         component: Page404Component,
         isNeedLogin: false,
+        isShow: true,
         children: null,
         meta: {
             title: '',
@@ -143,6 +167,7 @@ export const gRoutes: GRoute[] = [
         routeLink: 'login',
         component: LoginComponent,
         isNeedLogin: false,
+        isShow: true,
         children: null,
         meta: {
             title: '',

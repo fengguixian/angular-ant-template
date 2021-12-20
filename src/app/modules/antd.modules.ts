@@ -7,6 +7,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 
 import {
   UserOutline,
@@ -45,7 +47,9 @@ const icons = [
     NzLayoutModule,
     NzMenuModule,
     NzAvatarModule,
-    NzPopoverModule
+    NzPopoverModule,
+    NzTableModule,
+    NzDividerModule
   ],
   providers: [
     { provide: NZ_ICONS, useValue: icons }
