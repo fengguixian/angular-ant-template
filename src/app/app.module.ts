@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouteReuseStrategy } from '@angular/router';
+import { SimpleReuseStrategy } from './utils/SimpleReuseStrategy';
+
 import { AntdModules } from './modules/antd.modules';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -45,7 +48,10 @@ import { NgxEchartsModule } from 'ngx-echarts'
       echarts: () => import('echarts'),
     }),
   ],
-  providers: [],
+  providers: [
+    // 注释掉就不会有路由复用的效果了
+    { provide: RouteReuseStrategy, useClass: SimpleReuseStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

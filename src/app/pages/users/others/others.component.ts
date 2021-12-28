@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OthersComponent implements OnInit {
 
+  inputText?: string;
+
   constructor() { }
 
   ngOnInit(): void {
