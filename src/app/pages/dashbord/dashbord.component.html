@@ -1,5 +1,29 @@
-<div>
-    <nz-card style="width:300px;">
-        <div id="lineChart" echarts [options]="chartOption" style="width:280px; height:300px;"></div>
-    </nz-card>
+<div class="dashbord">
+    <div class="row">
+        <nz-card style="width:525px;">
+            <div id="lineChart" echarts [options]="lineChartOption" style="width:500px; height:300px;"></div>
+        </nz-card>
+
+        <nz-card style="width:525px; margin-left: 10px;">
+            <div id="mutailLineChart" echarts [options]="mutilLinesChartOption" style="width:500px; height:300px;"></div>
+        </nz-card>
+    </div>
+
+    <div class="row">
+        <nz-card style="width:525px; margin-top: 10px;">
+            <div id="pieChart" echarts [options]="pie1ChartOption" style="width:500px; height:300px;"></div>
+        </nz-card>
+        <nz-card style="width:525px; margin-top: 10px; margin-left: 10px;">
+            <div id="barChart" echarts [options]="barChartOption" style="width:500px; height:300px;"></div>
+        </nz-card>
+    </div>
+
+    <div class="row">
+        <nz-card style="width:525px; margin-top: 10px;">
+            <div id="sunChart" echarts [options]="sunburstChartOption" style="width:500px; height:300px;"></div>
+        </nz-card>
+        <nz-card style="width:525px; margin-top: 10px; margin-left: 10px;">
+            <div id="gaugeChart" echarts [options]="gaugeOption" style="width:500px; height:300px;"></div>
+        </nz-card>
+    </div>
 </div>
