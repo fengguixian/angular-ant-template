@@ -22,7 +22,8 @@ import {
   InfoCircleFill,
   TaobaoCircleFill,
   MenuFoldOutline,
-  MenuUnfoldOutline
+  MenuUnfoldOutline,
+  TwitterCircleFill
 } from '@ant-design/icons-angular/icons';
 
 const icons = [
@@ -36,7 +37,8 @@ const icons = [
   InfoCircleFill,
   TaobaoCircleFill,
   MenuFoldOutline,
-  MenuUnfoldOutline
+  MenuUnfoldOutline,
+  TwitterCircleFill
 ];
 
 @NgModule({

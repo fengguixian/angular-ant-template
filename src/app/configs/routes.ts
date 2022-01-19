@@ -10,6 +10,7 @@ import { OthersComponent } from "../pages/users/others/others.component";
 import { AboutComponent } from "../pages/about/about.component";
 import { ProductsComponent } from "../pages/products/products.component";
 import { DetailComponent } from "../pages/users/detail/detail.component";
+import { D3Component } from "../pages/d3/d3.component";
 
 export const sideMenuRoutes: GRoute[] = [
     {
@@ -107,6 +108,20 @@ export const sideMenuRoutes: GRoute[] = [
         meta: {
             title: "Products",
             icon: "taobao-circle-fill",
+            authIds: [],
+            level: 1,
+        }
+    },
+    {
+        path: 'd3',
+        routeLink: 'd3',
+        component: D3Component,
+        isNeedLogin: true,
+        isShow: true,
+        children: null,
+        meta: {
+            title: "D3",
+            icon: "twitter-circle-fill",
             authIds: [],
             level: 1,
         }

@@ -8,6 +8,7 @@ import {ScaleBand} from 'd3';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit, AfterViewInit {
+  // https://codeinhouse.com/d3js-with-angular-tutorial/
   @Input() data: { name: string, series: { name: string, value: number }[] }[] = [
     {
       name: 'Row1',
