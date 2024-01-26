@@ -13,11 +13,14 @@ export class LoginComponent implements OnInit {
   validateForm!: FormGroup;
 
   submitForm(): void {
+    this.router.navigateByUrl('dashbord');
+    // return;
     if (this.validateForm.valid) {
       let observable = this.authService.login();
+      var that = this;
       observable.subscribe({
         next: () => {
-          this.router.navigateByUrl('dashbord');
+          that.router.navigateByUrl('dashbord');
         }
       })
     } else {

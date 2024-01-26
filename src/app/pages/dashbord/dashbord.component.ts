@@ -9,30 +9,41 @@ import { EChartsOption } from 'echarts';
 })
 export class DashbordComponent implements OnInit {
 
+  lineChartOption !: EChartsOption;
+  mutilLinesChartOption !: EChartsOption;
+  pie1ChartOption !: EChartsOption;
+  barChartOption !: EChartsOption;
+  sunburstChartOption !: EChartsOption;
+  gaugeOption !: EChartsOption;
+
   constructor() { }
 
   ngOnInit(): void {
     //this.initCharts();
+    setTimeout(()=>{
+      this.configOptions();
+    }, 3000);
   }
-  
-  // https://echarts.apache.org/examples/zh/#chart-type-gauge
-  lineChartOption: EChartsOption = {
+
+  configOptions() {
+    // https://echarts.apache.org/examples/zh/#chart-type-gauge
+  this.lineChartOption = {
     xAxis: {
       type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      data: ['Mon1', 'Tue1', 'Wed1', 'Thu1', 'Fri1', 'Sat1', 'Sun1'],
     },
     yAxis: {
       type: 'value',
     },
     series: [
       {
-        data: [820, 932, 901, 934, 1290, 1330, 1320],
+        data: [300, 132, 301, 34, 120, 1330, 1320],
         type: 'line',
       },
     ],
   };
 
-  mutilLinesChartOption: EChartsOption = {
+  this.mutilLinesChartOption = {
     title: {
       text: ''
     },
@@ -129,7 +140,7 @@ export class DashbordComponent implements OnInit {
     ]
   };
 
-  pie1ChartOption: EChartsOption = {
+  this.pie1ChartOption = {
     title: {
       text: '',
       subtext: 'Fake Data',
@@ -165,7 +176,7 @@ export class DashbordComponent implements OnInit {
     ]
   };
 
-  barChartOption : EChartsOption = {
+  this.barChartOption = {
     title: {
       text: '',
       subtext: ''
@@ -234,7 +245,7 @@ export class DashbordComponent implements OnInit {
     ]
   };
 
-  sunburstChartOption : EChartsOption = {
+  this.sunburstChartOption = {
     series: {
       type: 'sunburst',
       // emphasis: {
@@ -310,7 +321,7 @@ export class DashbordComponent implements OnInit {
     }
   };
 
-  gaugeOption : EChartsOption = {
+  this.gaugeOption = {
     tooltip: {
       formatter: '{a} <br/>{b} : {c}%'
     },
@@ -330,6 +341,7 @@ export class DashbordComponent implements OnInit {
       }
     ]
   };
+  }
 
   initCharts() {
     const ec = echarts as any;
